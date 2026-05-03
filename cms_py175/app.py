@@ -1,6 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    root = os.path.abspath(os.path.dirname(__file__))
+    data_dir = os.path.join(root, "cms", "data")
+    files = [os.path.basename(name) for name in os.listdir(data_dir)]
+
+    return render_template("file_list.html", files=files)
+
 if __name__ == '__main__':
-    app.py.run(debug=True, port=5003)
+    app.run(debug=True, port=5003)

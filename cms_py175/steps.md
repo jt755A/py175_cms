@@ -2,7 +2,8 @@
 
 
 Step 1: initialize poetry project: create new project, install v env
+- Install Flask in directory
 - Create Flask object
 -: create app.py to run on port 5003 if '__name__' is '__main__'
-- : create a `started` html file in a `templates` folder that contains text
--: create a route that renders template the `started` html file.
+- : create a `file_list` html file in a `templates` folder that contains text, title should be 'File List'
+-: create a route that renders template the `file_list` html file.
